@@ -84,6 +84,10 @@ class Stagehand_HTTP_AcceptLanguage
             $acceptLanguage = @$_SERVER['HTTP_ACCEPT_LANGUAGE'];
         }
 
+        if (is_null($acceptLanguage) || !strlen($acceptLanguage)) {
+            return array();
+        }
+
         $acceptedLanguages = array();
         $i = 0;
         foreach (explode(',', str_replace(' ', '', $acceptLanguage)) as $acceptedLanguage) {

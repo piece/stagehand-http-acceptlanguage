@@ -126,6 +126,32 @@ class Stagehand_HTTP_AcceptLanguageTest extends PHPUnit_Framework_TestCase
                             );
     }
 
+    /**
+     * @test
+     */
+    public function returnAnEmptyArrayFromGetacceptedlanguagesIfTheAcceptLanguageIsNullOrAnEmptyString()
+    {
+        $this->assertEquals(0,
+                            count(Stagehand_HTTP_AcceptLanguage::getAcceptedLanguages())
+                            );
+        $this->assertEquals(0,
+                            count(Stagehand_HTTP_AcceptLanguage::getAcceptedLanguages(null))
+                            );
+        $this->assertEquals(0,
+                            count(Stagehand_HTTP_AcceptLanguage::getAcceptedLanguages(''))
+                            );
+    }
+
+    /**
+     * @test
+     */
+    public function returnNullFromGetpreferredlanguageIfTheAcceptLanguageIsNullOrAnEmptyString()
+    {
+        $this->assertNull(Stagehand_HTTP_AcceptLanguage::getPreferredLanguage());
+        $this->assertNull(Stagehand_HTTP_AcceptLanguage::getPreferredLanguage(null));
+        $this->assertNull(Stagehand_HTTP_AcceptLanguage::getPreferredLanguage(''));
+    }
+
     /**#@-*/
 
     /**#@+
