@@ -114,7 +114,7 @@ class Stagehand_HTTP_AcceptLanguageTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function useEnvironmentVariableIfTheArgumentIsNotGiven()
+    public function useHttpacceptlanguageIfTheArgumentIsNotGiven()
     {
         $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'ja,en-us;q=0.7,en;q=0.3';
 
