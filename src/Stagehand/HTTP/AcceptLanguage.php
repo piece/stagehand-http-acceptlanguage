@@ -78,8 +78,12 @@ class Stagehand_HTTP_AcceptLanguage
      * @param string $acceptLanguage
      * @return array
      */
-    public static function getAcceptedLanguages($acceptLanguage)
+    public static function getAcceptedLanguages($acceptLanguage = null)
     {
+        if (is_null($acceptLanguage)) {
+            $acceptLanguage = @$_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        }
+
         $acceptedLanguages = array();
         $i = 0;
         foreach (explode(',', str_replace(' ', '', $acceptLanguage)) as $acceptedLanguage) {
@@ -124,7 +128,7 @@ class Stagehand_HTTP_AcceptLanguage
      * @param string $acceptLanguage
      * @return string
      */
-    public static function getPreferredLanguage($acceptLanguage)
+    public static function getPreferredLanguage($acceptLanguage = null)
     {
         $acceptedLanguages = self::getAcceptedLanguages($acceptLanguage);
         if (!count($acceptedLanguages)) {

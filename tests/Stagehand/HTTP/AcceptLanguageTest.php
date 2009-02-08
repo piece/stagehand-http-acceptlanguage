@@ -111,6 +111,21 @@ class Stagehand_HTTP_AcceptLanguageTest extends PHPUnit_Framework_TestCase
                             );
     }
 
+    /**
+     * @test
+     */
+    public function useEnvironmentVariableIfTheArgumentIsNotGiven()
+    {
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'ja,en-us;q=0.7,en;q=0.3';
+
+        $this->assertEquals(array('ja', 'en-us', 'en'),
+                            Stagehand_HTTP_AcceptLanguage::getAcceptedLanguages()
+                            );
+        $this->assertEquals('ja',
+                            Stagehand_HTTP_AcceptLanguage::getPreferredLanguage()
+                            );
+    }
+
     /**#@-*/
 
     /**#@+
