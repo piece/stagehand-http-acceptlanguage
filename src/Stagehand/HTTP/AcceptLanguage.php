@@ -32,16 +32,24 @@
  * @copyright  2009 KUBO Atsuhiro <iteman@users.sourceforge.net>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
  * @version    SVN: $Id: TestRunner.php 204 2009-12-22 16:44:30Z iteman $
+ * @link       http://mashing-it-up.blogspot.com/2008/10/parsing-accept-language-in-rails.html
+ * @link       http://docs.komagata.org/679
+ * @link       http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
  * @since      File available since Release 0.1.0
  */
 
 // {{{ Stagehand_HTTP_AcceptLanguage
 
 /**
+ * A utility class for the Accept-Language request-header field.
+ *
  * @package    Stagehand_HTTP_AcceptLanguage
  * @copyright  2009 KUBO Atsuhiro <iteman@users.sourceforge.net>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
  * @version    Release: @package_version@
+ * @link       http://mashing-it-up.blogspot.com/2008/10/parsing-accept-language-in-rails.html
+ * @link       http://docs.komagata.org/679
+ * @link       http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
  * @since      Class available since Release 0.1.0
  */
 class Stagehand_HTTP_AcceptLanguage
@@ -75,6 +83,8 @@ class Stagehand_HTTP_AcceptLanguage
     // {{{ getAcceptedLanguages()
 
     /**
+     * Returns the languages accepted by the clients, sorted by quality.
+     *
      * @param string $acceptLanguage
      * @return array
      */
@@ -112,6 +122,8 @@ class Stagehand_HTTP_AcceptLanguage
     // {{{ compareAcceptedLanguages()
 
     /**
+     * Compares two elements of accepted languages.
+     *
      * @param array $a
      * @param array $b
      * @return integer
@@ -129,6 +141,8 @@ class Stagehand_HTTP_AcceptLanguage
     // {{{ getPreferredLanguage()
 
     /**
+     * Returns the language preferred by the client.
+     *
      * @param string $acceptLanguage
      * @return string
      */
