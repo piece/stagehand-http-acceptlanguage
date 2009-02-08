@@ -31,7 +31,7 @@
  * @package    Stagehand_HTTP_AcceptLanguage
  * @copyright  2009 KUBO Atsuhiro <iteman@users.sourceforge.net>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: TestRunner.php 204 2009-12-22 16:44:30Z iteman $
+ * @version    SVN: $Id$
  * @link       http://mashing-it-up.blogspot.com/2008/10/parsing-accept-language-in-rails.html
  * @link       http://docs.komagata.org/679
  * @link       http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
